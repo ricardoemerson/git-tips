@@ -1,5 +1,9 @@
 # Git Tips for a Better Work Flow
 
+> I decided to create this file with basic git tips, to help developers who are starting to use this great version control tool in its development tasks.
+
+> Author: Ricardo Emerson de Freitas Jardim
+
 ### Setting your identification
 
 
