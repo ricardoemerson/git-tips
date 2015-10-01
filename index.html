@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Git-tips by ricardoemerson</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Git-tips</h1>
+          <h2>Git Tips for a Better Work Flow</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/ricardoemerson/git-tips/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/ricardoemerson/git-tips/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/ricardoemerson/git-tips" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="git-tips-for-a-better-work-flow" class="anchor" href="#git-tips-for-a-better-work-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Git Tips for a Better Work Flow</h1>
+
+<blockquote>
+<p>I decided to create this file with basic git tips, to help developers who are starting to use this great version control tool in its development tasks.</p>
+
+<p>Author: Ricardo Emerson de Freitas Jardim</p>
+</blockquote>
+
+<h3>
+<a id="setting-your-identification" class="anchor" href="#setting-your-identification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting your identification</h3>
+
+<div class="highlight highlight-source-shell"><pre>git config --global user.name <span class="pl-s"><span class="pl-pds">"</span>Your Name<span class="pl-pds">"</span></span>
+git config --global user.email <span class="pl-s"><span class="pl-pds">"</span>your_email@domain-name.com<span class="pl-pds">"</span></span></pre></div>
+
+<h3>
+<a id="setting-a-local-repository" class="anchor" href="#setting-a-local-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting a local repository</h3>
+
+<p>Initiate a empty repository:</p>
+
+<div class="highlight highlight-source-shell"><pre>git init</pre></div>
+
+<p>Add files to project:</p>
+
+<div class="highlight highlight-source-shell"><pre>git add <span class="pl-c1">.</span></pre></div>
+
+<p>Commit files to local repository:</p>
+
+<div class="highlight highlight-source-shell"><pre>git commit -am <span class="pl-s"><span class="pl-pds">"</span>Message Description<span class="pl-pds">"</span></span></pre></div>
+
+<h3>
+<a id="check-informations-about-local-repository" class="anchor" href="#check-informations-about-local-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check informations about local repository.</h3>
+
+<h5>
+<a id="statuses" class="anchor" href="#statuses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statuses:</h5>
+
+<p>Checking the status of changes:</p>
+
+<div class="highlight highlight-source-shell"><pre>git status</pre></div>
+
+<p>Checking the status of changes at resuming mode:</p>
+
+<div class="highlight highlight-source-shell"><pre>git status -s</pre></div>
+
+<h5>
+<a id="branches" class="anchor" href="#branches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branches</h5>
+
+<p>Listing the local branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+
+<p>Listing the local and remote branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre>git branch --all</pre></div>
+
+<h5>
+<a id="logs" class="anchor" href="#logs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logs</h5>
+
+<p>Shows the commit log:</p>
+
+<div class="highlight highlight-source-shell"><pre>git log</pre></div>
+
+<p>Shows the commit log whith their changes:</p>
+
+<div class="highlight highlight-source-shell"><pre>git log -p</pre></div>
+
+<p>Shows the commit log in summarized mode:</p>
+
+<div class="highlight highlight-source-shell"><pre>git log --pretty=oneline<span class="pl-s"><span class="pl-pds">'</span></span></pre></div>
+
+<h5>
+<a id="remote-repositories" class="anchor" href="#remote-repositories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remote Repositories</h5>
+
+<p>Listing remotes repositories:</p>
+
+<div class="highlight highlight-source-shell"><pre>git remote</pre></div>
+
+<p>Listing remotes repositories with remote url after name:</p>
+
+<div class="highlight highlight-source-shell"><pre>git remote -v</pre></div>
+
+<p>Show the status of local and remote repository. After this, you could perform a push to update server with local data repository or pull for update local with remote data repository: </p>
+
+<div class="highlight highlight-source-shell"><pre>git remote show <span class="pl-k">&lt;</span>remote_repository<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># Local is fast forward? So:</span>
+git push origin master
+
+<span class="pl-c"># Remote is fast forward? So:</span>
+git pull origin master</pre></div>
+
+<h3>
+<a id="branchs-operations" class="anchor" href="#branchs-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Branchs operations.</h3>
+
+<p>Creating a branch:</p>
+
+<div class="highlight highlight-source-shell"><pre>git checkout -b <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<p>Listing the local branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre>git branch</pre></div>
+
+<p>Listing the local and remote branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre>git branch --all</pre></div>
+
+<p>Switching between branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre>git checkout <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<p>Mergin data between branchs:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># First go to the target_branch to get data from source_branch.</span>
+git checkout <span class="pl-k">&lt;</span>target_branch<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># Now run merge for update target_branch with source_branch data.</span>
+git merge <span class="pl-k">&lt;</span>source_branch<span class="pl-k">&gt;</span></pre></div>
+
+<h3>
+<a id="settings-for-remote-repositories" class="anchor" href="#settings-for-remote-repositories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings for remote repositories</h3>
+
+<h5>
+<a id="setting-a-remote-repository" class="anchor" href="#setting-a-remote-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting a remote repository.</h5>
+
+<p>On <strong>GitHub</strong>, creates a repository and assuming that we have already created a local repository, follow the steps below:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">&lt;</span>project_path<span class="pl-k">&gt;</span>
+git remote add origin https://github.com/<span class="pl-k">&lt;</span>user_name<span class="pl-k">&gt;</span>/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+<span class="pl-c"># On the first push, you must use --all to send all branchs to remote repository.</span>
+git push -u origin --all
+<span class="pl-c"># Later, just need use push like below:</span>
+git push origin <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<p>On <strong>Bitbucket</strong>, creates a repository and assuming that we have already created a local repository, follow the steps below:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">&lt;</span>project_path<span class="pl-k">&gt;</span>
+git remote add origin git@bitbucket.org:<span class="pl-k">&lt;</span>user_name<span class="pl-k">&gt;</span>/repository_name.git
+<span class="pl-c"># On the first push, you must use --all to send all branchs to remote repository.</span>
+git push -u origin --all
+<span class="pl-c"># Later, just need use push like below:</span>
+git push origin <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<h5>
+<a id="setting-a-ssh-server-as-a-remote-repository" class="anchor" href="#setting-a-ssh-server-as-a-remote-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting a SSH server as a remote repository.</h5>
+
+<p>Create the SSH repository:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># First access remote SSH server via ssh.</span>
+ssh <span class="pl-k">&lt;</span>user_name<span class="pl-k">&gt;</span>@server_ssh_name
+
+<span class="pl-c"># Create and access the local of repository.</span>
+mkdir -p <span class="pl-k">~</span>/directory_name/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/<span class="pl-k">&lt;</span>directory_name<span class="pl-k">&gt;</span>/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+
+<span class="pl-c"># Initiate the repository.</span>
+git init --bare
+
+<span class="pl-c"># Exit server to back to developer machine.</span>
+<span class="pl-k">&lt;</span>ctrl<span class="pl-k">&gt;</span> + <span class="pl-k">&lt;</span>d<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># Add remote SSH repository to local project.</span>
+git remote add ssh ssh://<span class="pl-k">&lt;</span>user_name<span class="pl-k">&gt;</span>@server_ssh_name/~/<span class="pl-k">&lt;</span>directory_name<span class="pl-k">&gt;</span>/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+
+<span class="pl-c"># On the first push, you must use --all to send all branchs to remote repository.</span>
+git push -u ssh --all
+
+<span class="pl-c"># Later, just need use push like below:</span>
+git push ssh <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># If local repository is outdated, you can update the local project with local repository, as below.</span>
+git pull ssh <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<p>Now, every time that has repository request, it will be necessary typing the password. To make the request more agile, you can copy the ssh key of the your machine to server and in future requests, the access will be granted whithout typing password.</p>
+
+<p>To performe this, run commands as below:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>
+mkdir <span class="pl-k">~</span>/.ssh
+ssh-keygen -t rsa
+ssh-copy-id <span class="pl-k">&lt;</span>user_name<span class="pl-k">&gt;</span>@server_name</pre></div>
+
+<p>On Mac OS <strong>ssh-copy-id</strong> is not available, so you can install it with Home Brew, command as below:</p>
+
+<div class="highlight highlight-source-shell"><pre>brew install ssh-copy-id</pre></div>
+
+<h5>
+<a id="setting-a-local-remote-repository" class="anchor" href="#setting-a-local-remote-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting a local remote repository.</h5>
+
+<p>Create the local repository:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># Create and access the local of repository.</span>
+mkdir -p <span class="pl-k">~</span>/directory_name/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/<span class="pl-k">&lt;</span>directory_name<span class="pl-k">&gt;</span>/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+
+<span class="pl-c"># Initiate the repository.</span>
+git init --bare
+
+<span class="pl-c"># Add local repository to local project.</span>
+git remote add <span class="pl-k">local</span> <span class="pl-k">~</span>/directory_name/<span class="pl-k">&lt;</span>repository_name<span class="pl-k">&gt;</span>.git
+
+<span class="pl-c"># On the first push, you must use --all to send all branchs to remote repository.</span>
+git push -u <span class="pl-k">local</span> --all
+
+<span class="pl-c"># Later, just need use push like below:</span>
+git push <span class="pl-k">local</span> <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># If local repository is outdated, you can update the local project with local repository, as below.</span>
+git pull <span class="pl-k">local</span> <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<h5>
+<a id="updating-the-remote-repository-with-local-data" class="anchor" href="#updating-the-remote-repository-with-local-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the remote repository with local data.</h5>
+
+<div class="highlight highlight-source-shell"><pre>git push origin <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span></pre></div>
+
+<h5>
+<a id="updating-the-local-project-with-remote-repository-data" class="anchor" href="#updating-the-local-project-with-remote-repository-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating the local project with remote repository data.</h5>
+
+<div class="highlight highlight-source-shell"><pre>git pull origin <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># You also can use git fetch, but later you have to execute git merge to complete operation.</span>
+git fetch origin <span class="pl-k">&lt;</span>branch_name<span class="pl-k">&gt;</span>
+git merge origin</pre></div>
+
+<h5>
+<a id="cloning-a-remote-repository-to-start-a-projec-from-it" class="anchor" href="#cloning-a-remote-repository-to-start-a-projec-from-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloning a remote repository to start a projec from it.</h5>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># Just tell the project_name if you want change the name of project directory.</span>
+git clone <span class="pl-k">&lt;</span>remote_repository_address<span class="pl-k">&gt;</span> [project_name]</pre></div>
+
+<h3>
+<a id="file-changes" class="anchor" href="#file-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>File Changes</h3>
+
+<p>To see what files was changed.</p>
+
+<div class="highlight highlight-source-shell"><pre>git status
+
+<span class="pl-c"># For summarized display:</span>
+git status -s</pre></div>
+
+<p>To view changes made to any given file.</p>
+
+<div class="highlight highlight-source-shell"><pre>git diff [file_name]
+
+<span class="pl-c"># If file_name was ommited, you will see differences of the all files.</span>
+git diff</pre></div>
+
+<p>To revert the changes and back to previous version of the file.</p>
+
+<div class="highlight highlight-source-shell"><pre>git checkout <span class="pl-k">&lt;</span>file_name<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># To revert all the changes of the current project, use git checkout as below:</span>
+git checkout <span class="pl-c1">.</span></pre></div>
+
+<h3>
+<a id="deleting-files-from-git-repository" class="anchor" href="#deleting-files-from-git-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deleting Files from git repository.</h3>
+
+<p>To delete a commited file, uses git as below:</p>
+
+<div class="highlight highlight-source-shell"><pre>git rm <span class="pl-k">&lt;</span>file_name<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># To delete all files in a directory:</span>
+git rm <span class="pl-k">&lt;</span>path_to_directory<span class="pl-k">&gt;</span>/. -r
+
+<span class="pl-c"># You also can use git add with parameter -u. This will not add new files, but will check the structure of files project  and delete unused files of git repository, as below:</span>
+git add -u</pre></div>
+
+<h3>
+<a id="tags" class="anchor" href="#tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tags</h3>
+
+<p>Tags normally is used to create releases of the product.</p>
+
+<h5>
+<a id="creating-tags" class="anchor" href="#creating-tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Tags:</h5>
+
+<div class="highlight highlight-source-shell"><pre>git tag -a <span class="pl-k">&lt;</span>version<span class="pl-k">&gt;</span> -m <span class="pl-s"><span class="pl-pds">'</span>descrition of tag release<span class="pl-pds">'</span></span></pre></div>
+
+<h5>
+<a id="listing-tags" class="anchor" href="#listing-tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Listing Tags:</h5>
+
+<div class="highlight highlight-source-shell"><pre>git tag </pre></div>
+
+<h5>
+<a id="locating-tags" class="anchor" href="#locating-tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Locating Tags:</h5>
+
+<div class="highlight highlight-source-shell"><pre>git tag -l <span class="pl-s"><span class="pl-pds">'</span>1.4.2.*<span class="pl-pds">'</span></span>
+
+<span class="pl-c"># Result:</span>
+v1.4.2.1
+v1.4.2.2
+v1.4.2.3
+v1.4.2.4</pre></div>
+
+<h5>
+<a id="tagging-later" class="anchor" href="#tagging-later" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging Later</h5>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"># Listing the commit logs.</span>
+git log --pretty=oneline
+15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch <span class="pl-s"><span class="pl-pds">'</span>experiment<span class="pl-pds">'</span></span>
+a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
+6d52a271eda8725415634dd79daabbc4d9b6008e Merge branch <span class="pl-s"><span class="pl-pds">'</span>experiment<span class="pl-pds">'</span></span>
+0b7434d86859cc7b8c3d5e1dddfed66ff742fcbc added a commit function
+4682c3261057305bdd616e23b64b0857d832627b added a todo file
+166ae0c4d3f420721acbb115cc33848dfcc2121a started write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
+
+<span class="pl-c"># Adding a tag release for a previous commit.</span>
+git tag -a v1.2 9fceb02
+
+<span class="pl-c"># Showing details.</span>
+git show v1.2
+tag v1.2
+Tagger: Scott Chacon <span class="pl-k">&lt;</span>schacon@gee-mail.com<span class="pl-k">&gt;</span>
+Date:   Mon Feb 9 15:32:16 2009 -0800
+
+version 1.2
+commit 9fceb02d0ae598e95dc970b74767f19372d61af8
+Author: Magnus Chacon <span class="pl-k">&lt;</span>mchacon@gee-mail.com<span class="pl-k">&gt;</span>
+Date:   Sun Apr 27 20:43:35 2008 -0700
+
+    updated rakefile
+...</pre></div>
+        </section>
+
+        <footer>
+          Git-tips is maintained by <a href="https://github.com/ricardoemerson">ricardoemerson</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
