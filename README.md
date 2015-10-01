@@ -1,4 +1,4 @@
-# Git Tips for a Better Work Flow
+# Git Tips for a Better Workflow
 
 > I decided to create this file with basic git tips, to help developers who are starting to use this great version control tool in its development tasks.
 
