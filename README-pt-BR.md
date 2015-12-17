@@ -1,10 +1,10 @@
-# Git Tips for a Better Workflow
+# Dicas de Git para um melhor fluxo de trabalho
 
-> I decided to create this file with basic git tips, to help developers who are starting to use this great version control tool in its development tasks.
+> Eu decidi criar este arquivo com dicas básicas de git, para ajudar os desenvolvedores que estão iniciando o uso desta grande ferramenta de controle versão em suas tarefas de desenvolvimento.
 
-> Author: Ricardo Emerson de Freitas Jardim
+> Autor: Ricardo Emerson de Freitas Jardim
 
-### Setting your identification
+### Configurando sua identificação
 
 
 ```sh
@@ -12,65 +12,51 @@ git config --global user.name "Your Name"
 git config --global user.email "your_email@domain-name.com"
 ```
 
-### Setting a local repository
+### Definindo um repositório local
 
-Initiate a empty repository:
+Inicializar um repositório vazio:
 
 ```sh
 git init
 ```
 
-Add files to project:
+Adicionar arquivos ao repositório:
 
 ```sh
 git add .
 ```
 
-Commit files to local repository:
+Salvar as mudanças ou novos arquivos ao repositório local:
 
 ```sh
 git commit -am "Message Description"
 ```
 
-To correct a previous message:
+### Verificando informações sobre o repositório local.
 
-```sh
-git commit --amend -m "New commit message"
-```
+##### Status - Situação/Estado:
 
-To edit a previous message in editor use git --amend like bellow:
-
-```sh
-git commit --amend
-```
-
-Git will open the editor for edit the message.
-
-### Check informations about local repository.
-
-##### Statuses:
-
-Checking the status of changes:
+Verificando o estado das mudanças:
 
 ```sh
 git status
 ```
 
-Checking the status of changes at resuming mode:
+Verificando o estado das mudanças em modo resumido:
 
 ```sh
 git status -s
 ```
 
-##### Branches
+##### Branches / Ramos
 
-Listing the local branchs:
+Listando as branchs locais:
 
 ```sh
 git branch
 ```
 
-Listing the local and remote branchs:
+Listando as branchs locais e remotas:
 
 ```sh
 git branch --all
@@ -78,101 +64,101 @@ git branch --all
 
 
 ##### Logs
-Shows the commit log:
+Exibindo o log de gravações (commit):
 
 ```sh
 git log
 ```
 
-Shows the commit log whith their changes:
+Exibindo o log de gracações (commit) com suas alterações:
 
 ```sh
 git log -p
 ```
 
-Shows the commit log in summarized mode:
+Exibindo o log de gravações (commit) de forma resumida:
 
 ```sh
 git log --pretty=oneline'
 ```
 
-##### Remote Repositories
-Listing remotes repositories:
+##### Repositórios Remotos
+Listando repositórios remotos:
 
 ```sh
 git remote
 ```
 
-Listing remotes repositories with remote url after name:
+Listando repositórios remotos exibindo a url remota após o seu nome:
 
 ```sh
 git remote -v
 ```
 
-Show the status of local and remote repository. After this, you could perform a push to update server with local data repository or pull for update local with remote data repository: 
+Exibe o estado do repositório local e remoto. Após isso, você poderá enviar/empurrar (push) uma atualização para o servidor com os dados do repositório local ou puxar (pull) uma atualização do servidor remoto para o repositório local. 
 
 ```sh
 git remote show <remote_repository>
 
-# Local is fast forward? So:
+# O repositório local está mais atualizado? Então:
 git push origin master
 
-# Remote is fast forward? So:
+# O repositório remoto está mais atualizado? Então:
 git pull origin master
 ```
 
 
-### Branchs operations.
-Creating a branch:
+### Operações com Ramos (Branchs).
+Criando um ramo (branch):
 
 ```sh
 git checkout -b <branch_name>
 ```
 
-Listing the local branchs:
+Listando os ramos (branchs) locais:
 
 ```sh
 git branch
 ```
 
-Listing the local and remote branchs:
+Listando os ramos (branchs) locais e remotos:
 
 ```sh
 git branch --all
 ```
 
-Switching between branchs:
+Alternando entre ramos (branchs):
 
 ```sh
 git checkout <branch_name>
 ```
 
-Mergin data between branchs:
+Mesclando dados entre ramos (branchs):
 
 ```sh
-# First go to the target_branch to get data from source_branch.
+# Primeiro acesse o ramo (branch) que irá ser atualizado.
 git checkout <target_branch>
 
-# Now run merge for update target_branch with source_branch data.
+# Agora execute o comando de mesclagem (merge) para atualizar o ramo (branch) atual.
 git merge <source_branch>
 ```
 
-### Settings for remote repositories
+### Configurações para Repositório Remoto
 
-##### Setting a remote repository.
+##### Configurando um repositório remoto.
     
-On **GitHub**, creates a repository and assuming that we have already created a local repository, follow the steps below:
+No **GitHub**, crie um repositório, e considerando que você já tem o repositório local criado, siga os passos abaixo:
 
 ```sh
 cd <project_path>
 git remote add origin https://github.com/<user_name>/<repository_name>.git
-# On the first push, you must use --all to send all branchs to remote repository.
+# No primeiro envio, você deve usar --all para enviar todas os ramos (branchs) para o repositório remoto.
 git push -u origin --all
-# Later, just need use push like below:
+# Depois, apenas use o comando push como abaixo:
 git push origin <branch_name>
 ```
 
-On **Bitbucket**, creates a repository and assuming that we have already created a local repository, follow the steps below:
+No **Bitbucket**, crie um repositório, e considerando que você já tem o repositório local criado, siga os passos abaixo:
 
 ```sh
 cd <project_path>
