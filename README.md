@@ -122,6 +122,18 @@ git pull origin master
 ```
 
 
+#### Reverting the last commit operation.
+
+Revert local master branch to a specific commit.
+```sh
+git reset --hard 0d1d7fc32e5a947fbd92ee598033d85bfc445a50
+```
+
+Revert remote master branch to a specific commit.
+```sh
+git push -f origin 0d1d7fc32e5a947fbd92ee598033d85bfc445a50:master
+```
+
 ### Branchs operations.
 Creating a branch:
 
@@ -155,6 +167,13 @@ git checkout <target_branch>
 
 # Now run merge for update target_branch with source_branch data.
 git merge <source_branch>
+```
+
+Removing local and remote branchs:
+
+```sh
+git branch -d <branch-name>
+git push origin :<branch-name>
 ```
 
 ### Settings for remote repositories
